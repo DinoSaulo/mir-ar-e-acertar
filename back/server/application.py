@@ -23,9 +23,9 @@ def uploadfile():
                 os.makedirs(UPLOAD_FOLDER)
             file_path = UPLOAD_FOLDER + secure_filename(file.filename)
             file.save(file_path)
-            print(Analysis.analyse(file_path))
+            analysis = Analysis.analyse(file_path)
             os.remove(file_path)
-            return 'Success'
+            return analysis
 
 
 if __name__ == "__main__":
