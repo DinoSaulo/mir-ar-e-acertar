@@ -8,4 +8,22 @@
       elementis mé pra quem é amistosis quis leo.
     </p>
   </div>
+  <div class="input-container">
+    <div class="label-container">
+      <label for="up-pod">Envie seu Podcast! :)</label>
+      <input
+        #file
+        id="up-pod"
+        type="file"
+        accept=".mp3,audio/*"
+        (change)="typeValidator(file.files)"
+      />
+      <span style="color: red" *ngIf="message">{{ message }}</span>
+    </div>
+    <div class="button-container">
+      <button [disabled]="!withMusic" type="submit" (click)="uploadPod()">
+        Transformar fundo desta imagem
+      </button>
+    </div>
+  </div>
 </div>
