@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="overall-container">
+    <h1 class="title">Seu Podcast está assim:</h1>
+
+    <mat-progress-bar
+      mode="determinate"
+      [value]="overall"
+      [color]="changeColor()"
+    ></mat-progress-bar>
+    <br />
+
+    <h3>{{ overall }}/100</h3>
+  </div>
+
+  <div class="rev-container"></div>
+</div>
