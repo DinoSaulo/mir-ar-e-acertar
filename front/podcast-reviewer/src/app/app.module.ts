@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { AvaliationComponent } from './pod-review/avaliation/avaliation.component';
+import { ProgressComponentComponent } from './pod-review/progress-component/progress-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AvaliationComponent
+    AvaliationComponent,
+    ProgressComponentComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 class="title" *ngIf="metric">{{ metric }}</h1>
+
+  <mat-progress-bar
+    mode="determinate"
+    [value]="overall"
+    [color]="changeColor()"
+  ></mat-progress-bar>
+  <br />
+
+  <h3>{{ overall }}/100</h3>
+</div>

@@ -16,10 +16,8 @@ export class AvaliationComponent implements OnInit {
   }
 
   changeColor(){
-    if(this.overall <=30) {
+    if(this.overall <=50) {
       return 'warn';
-    } else if (this.overall >=31 && this.overall < 50) {
-      return 'accent';
     } else {
       return 'primary'
     }
