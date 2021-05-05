@@ -1,5 +1,6 @@
 import os
 from flask import Flask, flash, request, redirect, url_for
+from flask_cors import CORS
 from analysis import Analysis
 from werkzeug.utils import secure_filename
 
@@ -7,6 +8,7 @@ UPLOAD_FOLDER = './uploads/'
 
 application = Flask(__name__)
 application.secret_key = b'test'
+CORS(application)
 
 
 @application.route('/analyse', methods=['POST'])
