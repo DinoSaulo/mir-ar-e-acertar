@@ -14,13 +14,13 @@ export class AvaliationComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.quality = Number(localStorage.getItem('qualityAudio'));
-    this.silence = Number(localStorage.getItem('silenceTime'));
-    this.overall = (this.overall + this.quality) / 2;
+    this.quality = Math.ceil(Number(localStorage.getItem('qualityAudio')));
+    this.silence = Math.ceil(Number(localStorage.getItem('silenceTime')));
+    this.overall = Math.ceil((this.silence + this.quality) / 2);
   }
 
-  changeColor(){
-    if(this.overall <=50) {
+  changeColor() {
+    if (this.overall <= 50) {
       return 'warn';
     } else {
       return 'primary'
