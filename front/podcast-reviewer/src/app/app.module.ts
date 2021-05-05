@@ -1,3 +1,4 @@
+import { HomeService } from './home/home.service';
 import { MaterialModule } from './material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -8,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { AvaliationComponent } from './pod-review/avaliation/avaliation.component';
 import { ProgressComponentComponent } from './pod-review/progress-component/progress-component.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,14 @@ import { ProgressComponentComponent } from './pod-review/progress-component/prog
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule
   ],
   exports: [
     MaterialModule
   ],
-  providers: [],
+  providers: [HomeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
