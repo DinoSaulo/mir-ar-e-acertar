@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { HomeService } from './home.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -13,7 +14,7 @@ export class HomeComponent implements OnInit {
   public music: File;
   public type: string;
 
-  constructor(public homeService: HomeService) { }
+  constructor(public homeService: HomeService, private router: Router,) { }
 
   ngOnInit(): void {
   }
@@ -39,7 +40,12 @@ export class HomeComponent implements OnInit {
     data.append('type', this.type);
     data.append('file', this.music);
     console.log(data)
-    this.homeService.uploadPod(data).subscribe(metrics => {console.log(metrics)})
+    this.homeService.uploadPod(data).subscribe( metrics => {
+      localStorage.setItem('qualityAudio', metrics.audio_quality)
+      localStorage.setItem('silenceTime', metrics.silent_time)
+      this.router.navigateByUrl('review')
+      }
+    )
   }
 
 }

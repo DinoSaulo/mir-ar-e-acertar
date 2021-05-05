@@ -14,20 +14,14 @@
   <div class="rev-container">
     <div>
       <app-progress-component
-        [overall]="45"
-        metric="Barulho de Fundo"
+        [overall]="quality"
+        metric="Qualidade de Aúdio"
       ></app-progress-component>
     </div>
     <div>
       <app-progress-component
-        [overall]="77"
-        metric="Música/Edição"
-      ></app-progress-component>
-    </div>
-    <div>
-      <app-progress-component
-        [overall]="98"
-        metric="Comunicação"
+        [overall]="silence"
+        metric="Tempo de Silêncio"
       ></app-progress-component>
     </div>
   </div>

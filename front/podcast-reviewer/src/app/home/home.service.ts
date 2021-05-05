@@ -15,7 +15,7 @@ export class HomeService {
     ){}
 
     uploadPod(data: any): Observable<any> {
-        const url = "http://127.0.0.1:5000/analyse/";
+        const url = "http://localhost:5000/analyse";
         return this.http.post<any>(url, data)
         .pipe(
             catchError(err => {

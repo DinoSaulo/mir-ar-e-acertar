@@ -7,12 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AvaliationComponent implements OnInit {
 
-  public overall: number;
+  public overall = 0;
+  public silence: number;
+  public quality: number;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.overall = 45;
+    this.quality = Number(localStorage.getItem('qualityAudio'));
+    this.silence = Number(localStorage.getItem('silenceTime'));
+    this.overall = (this.overall + this.quality) / 2;
   }
 
   changeColor(){
