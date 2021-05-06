@@ -17,10 +17,11 @@ export class HomeComponent implements OnInit {
   constructor(public homeService: HomeService, private router: Router,) { }
 
   ngOnInit(): void {
+    this.message = "Envie seu Podcast! :)";
   }
 
   typeValidator(files) {
-    this.message = '';
+    this.message = 'enviando...';
     if (files.length === 0) {
       return;
     }
@@ -33,18 +34,20 @@ export class HomeComponent implements OnInit {
     this.withMusic = true;
     this.music = files[0]
     this.type = files[0].type;
+
+    this.uploadPod();
   }
 
-  uploadPod(){
+  uploadPod() {
     let data = new FormData();
     data.append('type', this.type);
     data.append('file', this.music);
     console.log(data)
-    this.homeService.uploadPod(data).subscribe( metrics => {
+    this.homeService.uploadPod(data).subscribe(metrics => {
       localStorage.setItem('qualityAudio', metrics.audio_quality)
       localStorage.setItem('silenceTime', metrics.silent_time)
       this.router.navigateByUrl('review')
-      }
+    }
     )
   }
 

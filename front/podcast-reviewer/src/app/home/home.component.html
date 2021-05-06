@@ -2,28 +2,25 @@
   <div class="text-container">
     <h1 class="title">PodAnalytics</h1>
     <p class="subtitle">
-      Mussum Ipsum, cacilds vidis litro abertis. Si u mundo tá muito paradis?
-      Toma um mé que o mundo vai girarzis! Casamentiss faiz malandris se
-      pirulitá. Suco de cevadiss deixa as pessoas mais interessantis. In
-      elementis mé pra quem é amistosis quis leo.
+      O PodAnalytics consiste em uma ferramenta que analisa diversos aspectos dos áudios de podcasts e gera 
+      pontuações com base na qualidade desses áudios nos mais diversos aspectos.<br/>
+      Atualmente te retornamos duas métricas:
     </p>
+    <ul>
+      <li>Qualidade do aúdio</li>
+      <li>Tempo de silêncio</li>
+    </ul>
   </div>
   <div class="input-container">
     <div class="label-container">
-      <label for="up-pod">Envie seu Podcast! :)</label>
-      <input
-        #file
-        id="up-pod"
-        type="file"
-        accept=".mp3,audio/*"
-        (change)="typeValidator(file.files)"
-      />
-      <span style="color: red" *ngIf="message">{{ message }}</span>
+      <label for="up-pod">{{ message }}</label>
     </div>
-    <div class="button-container">
-      <button [disabled]="!withMusic" type="submit" (click)="uploadPod()">
-        Enviar
-      </button>
-    </div>
+    <input
+      #file
+      id="up-pod"
+      type="file"
+      accept=".mp3,audio/*"
+      (change)="typeValidator(file.files)"
+    />
   </div>
 </div>

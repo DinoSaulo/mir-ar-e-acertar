@@ -16,7 +16,12 @@
     justify-content: center;
 
     .mat-progress-bar {
-      height: 10px;
+      height: 15px;
+      border-radius: 10px;
+    }
+
+    h3 {
+      font-size: 1.75rem;
     }
   }
 
