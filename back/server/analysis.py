@@ -11,11 +11,11 @@ class Analysis:
         silent_time_score = 100 - silent_time
 
         audio_quality = Analysis.snr(audio_y)
-        # TODO: audio_quality_score =
+        audio_quality_score = 100 - audio_quality
 
         return {
             'silent_time': silent_time_score,
-            'audio_quality': audio_quality,
+            'audio_quality': audio_quality_score,
         }
 
     @staticmethod
